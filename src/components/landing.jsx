@@ -1,5 +1,5 @@
 import { Typer } from "./typer";
-import CV from '/src/assets/docs/CV.pdf'
+import CV from '/src/assets/CV-czIX2anx.pdf'
 
 export const Landing = () => {
 
