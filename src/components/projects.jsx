@@ -105,8 +105,9 @@ export const Projects = () => {
                                 <img src={financialAdvisor} alt="" className={imageAttribute}/>
                                 :
                                 <div className={containerRender}>
-                                    <p className={textAttribute}> An AI-driven financial advisor which is trained to predict the financial health score of the user based on weighted income and expense.
-                                                    The system will provide insights to the user based on the his/her financial stability. This system also integrates intent-based chatbot
+                                    <p className={textAttribute}> An AI-driven financial advisor which is trained to evaluate the financial health score of the user based on weighted income and expense.
+                                                    The system employed a random forest regression algorithm to handle the numerical input variables used for model prediction.
+                                                    This system also integrates intent-based chatbot
                                                     to provide some queries or advice related to finance.
                                     </p>
                                     <div className={techStacksContainer}>
