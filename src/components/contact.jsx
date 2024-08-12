@@ -1,19 +1,24 @@
 import { BiArrowFromLeft, BiArrowFromRight } from "react-icons/bi"
 import { FaArrowRight, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { links } from "/src/backup/platforms/platforms.jsx";
+
 export const Contact = () => {
     const arrow = "text-[15px]";
     const platforms = [
         {
             key: 0,
-            item: <FaFacebook />
+            item: <FaFacebook />,
+            link: links[0]
         },
         {
             key: 1,
-            item: <FaLinkedin />
+            item: <FaLinkedin />,
+            link: links[1]
         },
         {
             key: 2,
-            item: <FaInstagram />
+            item: <FaInstagram />,
+            link: links[2]
         }
     ]
 
@@ -41,9 +46,9 @@ export const Contact = () => {
                 <div className="flex items-center justify-center text-[30px] gap-4">
                 {
                     platforms.map(platform => (
-                        <p key={platform.id}>
+                        <a key={platform.key} href={platform.link} target="_blank">
                             {platform.item}
-                        </p>
+                        </a>
                     ))
                 }
                 </div>

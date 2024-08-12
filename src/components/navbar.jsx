@@ -32,6 +32,8 @@ export const Navbar = () => {
     setOption(!option);
   };
 
+  const optionAttribute = "p-1 rounded-sm text-4xl";
+
   return (
     <>
     <div className={!show ? 
@@ -69,11 +71,11 @@ export const Navbar = () => {
     </div>
 
       {/* view for smaller device */}
-      <div className={"p-1 rounded-sm md:hidden fixed bg-opacity-60 left-3 top-5 text-3xl z-10"}>
-        {!option ? <CiMenuBurger onClick={toggleOption}/> : <p onClick={toggleOption} className="font-thin"> X </p>}
+      <div className={"md:hidden fixed bg-opacity-5 w-full flex items-center bg-black backdrop-blur-md h-12 px-2 z-10"}>
+        {!option ? <CiMenuBurger onClick={toggleOption} className={optionAttribute} /> : <p onClick={toggleOption} className={optionAttribute}> X </p>}
       </div>
 
-      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-black bg-opacity-100 duration-300 ease-in-out left-0" 
+      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-black duration-300 ease-in-out left-0" 
                               : 
                                 "md:hidden left-[-10%]"}>
             <ul className={!option ? "hidden" 
