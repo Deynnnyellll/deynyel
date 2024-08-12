@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
+import { TbLetterX } from "react-icons/tb";
 import { Link } from "react-scroll";
 
 export const Navbar = () => {
@@ -32,7 +33,7 @@ export const Navbar = () => {
     setOption(!option);
   };
 
-  const optionAttribute = "p-1 rounded-sm text-4xl";
+  const optionAttribute = "md:hidden p-1 rounded-sm text-4xl top-[1%] left-2 fixed z-10";
 
   return (
     <>
@@ -71,16 +72,16 @@ export const Navbar = () => {
     </div>
 
       {/* view for smaller device */}
-      <div className={"md:hidden fixed bg-opacity-5 w-full flex items-center bg-black backdrop-blur-md h-12 px-2 z-10"}>
-        {!option ? <CiMenuBurger onClick={toggleOption} className={optionAttribute} /> : <p onClick={toggleOption} className={optionAttribute}> X </p>}
+      <div className={"md:hidden fixed bg-opacity-5 w-full bg-black backdrop-blur-md h-12 px-2 z-5"}>
       </div>
+      {!option ? <CiMenuBurger onClick={toggleOption} className={optionAttribute} /> : <TbLetterX onClick={toggleOption} className={optionAttribute} />}
 
-      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-black duration-300 ease-in-out left-0" 
+      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-black bg-opacity-95 duration-300 ease-in-out left-0" 
                               : 
                                 "md:hidden left-[-10%]"}>
             <ul className={!option ? "hidden" 
                               : 
-                                "w-full h-[90%] font-semibold text-slate-100 flex justify-center items-center flex-col text-3xl gap-5"}>
+                                "w-full h-[90%] font-semibold text-slate-100 flex justify-center items-center flex-col text-3xl gap-10"}>
               <li className="hover:text-slate-400"> 
                 <Link to="home" duration={300} smooth={true}>
                   Home
