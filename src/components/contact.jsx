@@ -26,7 +26,7 @@ export const Contact = () => {
         <div id="contact" className="w-full flex flex-col justify-center items-center gap-5">
             <h1 className="text-[50px] md:text-[60px] font-semibold text-center mt-10"> Contact </h1>
             <h4 className="w-[75%] md:w-full text-center mt-[-1.75%] font-thin mb-2"> If you have any inquiry, you can email me through this form</h4>
-            <form method='POST' action="https://getform.io/f/1cf65667-2d94-4be1-92f9-e28afb33a240" className='flex flex-col text-center items-center h-[28rem] md:h-[32rem] w-[85%] md:w-[40%] rounded-sm outline outline-2 outline-white text-slate-950 gap-4 p-4'>
+            <form method='POST' action="https://getform.io/f/1cf65667-2d94-4be1-92f9-e28afb33a240" className='flex flex-col text-center items-center h-[28rem] md:h-[32rem] w-[85%] md:w-[65%] lg:w-[40%] rounded-sm outline outline-2 outline-white text-slate-950 gap-4 p-4'>
                 <input type="text" className="h-[10%] w-[100%] p-3" placeholder="Name" name="name" required/>
                 <input type="email"  className="h-[10%] w-[100%] p-3" placeholder="Email" name="email" required/>
                 <textarea name="message" id="" className="h-[80%] w-[100%] p-3" placeholder="Message" required></textarea>

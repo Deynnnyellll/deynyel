@@ -2,7 +2,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 export const Typer = () => {
   return (
-      <div className='flex flex-col items-center me-0 md:me-20'>
+      <div className='flex flex-col items-center me-0 lg:me-20'>
           <h1 className='text-[40px] md:text-[80px] font-bold md:font-normal'> Hi, I am Danniel </h1>
           <h4 className='text-3xl md:text-5xl'>
                <span className='text-gray-400 font-bold text-3xl md:text-5xl'>

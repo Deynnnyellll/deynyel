@@ -42,11 +42,11 @@ export const Navbar = () => {
     <div className={!show ? 
                     "hidden md:flex md:items-center top-[-10%] justify-between gap-[400px] px-6 md:h-16 w-full fixed bg-black bg-opacity-20 backdrop-blur-2xl z-10 ease-in-out duration-300" 
                     : 
-                    "hidden md:flex md:items-center top-0 justify-between gap-[400px] px-6 md:h-16 w-full fixed bg-black bg-opacity-20 backdrop-blur-2xl z-10 ease-in-out duration-300"}>
+                    "hidden md:flex md:items-center top-0 justify-between gap-[20%] px-6 md:h-16 w-full fixed bg-black bg-opacity-20 backdrop-blur-2xl z-10 ease-in-out duration-300"}>
       <img src={logo} alt="logo" className={show ? "w-[50px] duration-200" : "hidden"}/>
       <ul className=
       {show ? 
-        "flex items-center justify-between text-center text-tight me-10 text-xl w-[30%] h-full font-semibold ease-in-out cursor-pointer" 
+        "flex items-center justify-between text-center text-tight me-10 md:text-md gap-4 text-xl w-[30%] h-full font-semibold ease-in-out cursor-pointer" 
         : 
         "hidden"
       }
