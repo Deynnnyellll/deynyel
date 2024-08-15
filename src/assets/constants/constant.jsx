@@ -1,7 +1,13 @@
+// tech stacks
 import { IoLogoJavascript, IoLogoPython, IoLogoHtml5, IoLogoCss3 } from "react-icons/io5";
 import { SiScikitlearn, SiFlask } from "react-icons/si";
 import { RiTailwindCssFill, RiReactjsFill } from "react-icons/ri";
 import { SiJupyter, SiTensorflow } from "react-icons/si";
+
+// skills
+import { TbWorldWww } from "react-icons/tb";
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { BiDesktop } from "react-icons/bi";
 
 // images
 import illuscan from '/src/assets/images/illuscan.png';
@@ -123,4 +129,25 @@ export const projectList = [
         description: "A web-based machine learning system that is trained using CNN and transfer learning to classify different dog breeds. This application is implemented through a Flask framework, while the ML model is developed using Jupyter Notebook as a platform and Tensorflow library to build a CNN architecture.",
         techStacks: dogBreedTech
     },
+]
+
+export const skills = [
+    {
+        id: 0,
+        name: "Web Development",
+        icon: <TbWorldWww />,
+        description: "Creating a user-friendly, aestethically pleasing, and responsive web application using popular libraries and frameworks including React JS, TailwindCSS, and Flask"
+    },
+    {
+        id: 1,
+        name: "Machine Learning",
+        icon: <GiArtificialIntelligence />,
+        description: "Creating various machine learning models that can potentially solve real-world problems through Python and popular libraries such as Sci-kit learn and Tensorflow "
+    },
+    {
+        id: 2,
+        name: "Software Development",
+        icon: <BiDesktop />,
+        description: "Developing software applications using Python"
+    }
 ]
