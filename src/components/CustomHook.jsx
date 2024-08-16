@@ -5,17 +5,15 @@ const useIntersectionObserver = () => {
     const ref = useRef(null);
 
     useEffect(() => {
-        console.log(ref.current)
         let refer = null
         const observer = new IntersectionObserver(
             ([entry]) => setIsIntersecting(entry.isIntersecting),
-            {threshold: 0.008}
+            {threshold: 0.005}
         ); //observer
 
         if(ref.current) {
             observer.observe(ref.current);
             refer = ref.current
-            console.log(refer)
 
         }
 

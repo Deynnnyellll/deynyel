@@ -75,8 +75,8 @@ export const Navbar = () => {
       </ul>
       {
         show &&
-          <a className="px-3 py-1 bg-slate-50 rounded-2xl text-slate-800 flex items-center gap-2" target="_blank" href="https://github.com/Deynnnyellll">
-            <SiGithub  className="text-2xl font"/>
+          <a className="px-3 py-1 bg-slate-50 hover:py-[6.5px] hover:translate-y-[-1px] hover:bg-slate-200 duration-200 ease-in-out rounded-2xl text-slate-800 flex items-center gap-2" target="_blank" href="https://github.com/Deynnnyellll">
+            <SiGithub  className="text-2xl"/>
             <p className="font-semibold"> Github </p>
           </a>
       }
@@ -115,7 +115,7 @@ export const Navbar = () => {
                 </Link>
               </li>
 
-              <a className="px-4 py-1 bg-slate-50 rounded-3xl text-slate-800 flex items-center gap-2" href="https://github.com/Deynnnyellll">
+              <a className="px-4 py-1 bg-slate-50 hover:bg-slate-200 rounded-3xl text-slate-800 flex items-center gap-2" href="https://github.com/Deynnnyellll">
                 <SiGithub  className="text-xl"/>
                 <p className="font-semibold text-[16pt]"> Github </p>
               </a>
