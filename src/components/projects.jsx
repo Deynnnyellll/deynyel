@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 export const Projects = () => {
     // card container
-    const cardOne = "border-2 border-[#4E4FEB] w-[80%] md:w-[47%] md:h-[400px] mt-10 p-4 hover:translate-y-[-3%] hover:shadow-lg hover:shadow-[#864AF9] duration-300 flex flex-col";
-    const cardTwo = "border-2 border-[#068FFF] w-[80%] md:w-[47%] md:h-[400px] mt-10 p-4 hover:translate-y-[-3%] hover:shadow-lg hover:shadow-[#864AF9] duration-300 flex flex-col";
+    const cardOne = "border-2 border-[#4E4FEB] w-[80%] md:w-[47%] md:h-[400px] mt-10 p-4 hover:translate-y-[-3%] hover:shadow-lg hover:shadow-[#864AF9] duration-300 flex flex-col cursor-pointer";
+    const cardTwo = "border-2 border-[#068FFF] w-[80%] md:w-[47%] md:h-[400px] mt-10 p-4 hover:translate-y-[-3%] hover:shadow-lg hover:shadow-[#864AF9] duration-300 flex flex-col cursor-pointer";
     const projectText = "text-[20px] lg:text-[25px] text-center font-medium mb-[-40px]";
     
     // image and text
