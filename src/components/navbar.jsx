@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
-import { TbLetterX } from "react-icons/tb";
+import { TbSquareLetterXFilled } from "react-icons/tb";
 import { SiGithub } from "react-icons/si";
+
 import { Link } from "react-scroll";
 import logo from '/src/assets/images/D.png'
 
@@ -75,25 +76,25 @@ export const Navbar = () => {
       </ul>
       {
         show &&
-          <a className="px-3 py-1 bg-slate-50 hover:py-[6.5px] hover:translate-y-[-1px] hover:bg-slate-200 duration-200 ease-in-out rounded-2xl text-slate-800 flex items-center gap-2" target="_blank" href="https://github.com/Deynnnyellll">
+          <a className="px-3 py-1 bg-slate-50 hover:py-[4.5px] hover:bg-blue-300 duration-200 ease-in-out rounded-2xl text-slate-800 flex items-center gap-2" target="_blank" href="https://github.com/Deynnnyellll">
             <SiGithub  className="text-2xl"/>
-            <p className="font-semibold"> Github </p>
+            <p className="font-semibold"> GitHub </p>
           </a>
       }
     </div>
 
       {/* view for smaller device */}
-      <div className={"md:hidden fixed bg-opacity-5 w-full bg-black backdrop-blur-md h-12 px-2 z-5 flex justify-end items-center"}>
+      <div className={"md:hidden fixed bg-opacity-5 w-full bg-[#0F0F0F] backdrop-blur-md h-12 px-2 z-5 flex justify-end items-center"}>
         <img src={logo} alt="logo" className="w-[35px] h-[35px]"/>
       </div>
-      {!option ? <CiMenuBurger onClick={toggleOption} className={optionAttribute} /> : <TbLetterX onClick={toggleOption} className={optionAttribute} />}
+      {!option ? <CiMenuBurger onClick={toggleOption} className={optionAttribute} /> : <TbSquareLetterXFilled onClick={toggleOption} className="md:hidden rounded-sm text-4xl top-[1%] left-2 fixed z-10" />}
 
-      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-black bg-opacity-95 duration-300 ease-in-out left-0 flex flex-col justify-center" 
+      <div className={option ? "md:hidden h-[100vh] w-[65%] fixed bg-[#0F0F0F] bg-opacity-95 duration-300 ease-in-out left-0 flex flex-col justify-center" 
                               : 
-                                "md:hidden h-[100vh] w-[65%] fixed bg-black bg-opacity-95 duration-300 ease-in-out left-[-65%] flex flex-col justify-center"}>
+                                "md:hidden h-[100vh] w-[65%] fixed bg-[#0F0F0F] bg-opacity-95 duration-300 ease-in-out left-[-65%] flex flex-col justify-center"}>
             <ul className={!option ? "hidden" 
                               : 
-                                "w-full h-[45%] font-semibold text-slate-100 flex justify-between  items-center flex-col text-2xl"}>
+                                "w-full h-[45%] font-semibold text-slate-100 flex justify-between  items-center flex-col text-3xl"}>
               <li className="hover:text-slate-400"> 
                 <Link to="home" duration={300} smooth={true}>
                   Home
@@ -115,9 +116,9 @@ export const Navbar = () => {
                 </Link>
               </li>
 
-              <a className="px-4 py-1 bg-slate-50 hover:bg-slate-200 rounded-3xl text-slate-800 flex items-center gap-2" href="https://github.com/Deynnnyellll">
+              <a className="px-4 py-[2px] bg-slate-50 hover:bg-slate-200 rounded-2xl text-slate-800 flex items-center gap-2" href="https://github.com/Deynnnyellll">
                 <SiGithub  className="text-xl"/>
-                <p className="font-semibold text-[16pt]"> Github </p>
+                <p className="font-semibold text-[16pt]"> GitHub </p>
               </a>
             </ul>
       </div>

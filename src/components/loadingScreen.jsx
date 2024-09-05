@@ -10,7 +10,7 @@ export const LoadingScreen = ({count, isLoading}) => {
     }, [count])
 
   return (
-    <div className={isLoading ? "bg-[#070F2B] absolute left-0 w-full h-[100vh] flex flex-col items-center justify-center gap-8" : "bg-black absolute left-[-100%] w-full h-[100vh] flex flex-col items-center justify-center gap-4 duration-700 ease-out"}>
+    <div className={isLoading ? "bg-[#0F0F0F] absolute left-0 w-full h-[100vh] flex flex-col items-center justify-center gap-8" : "bg-black absolute left-[-100%] w-full h-[100vh] flex flex-col items-center justify-center gap-4 duration-700 ease-out"}>
         <img src={hourglass} alt="programmer" className="w-[55%] md:w-[20%] lg:w-[15%] invert animate-spin mb-4" />
         <div className="w-[70%] md:w-[25%] h-[5%] outline outline-4 rounded-sm flex items-center">
             <div className="h-[99%] bg-slate-50 rounded-sm" style={{width: `${progressWidth}%`}}>

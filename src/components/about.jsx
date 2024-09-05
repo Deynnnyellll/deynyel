@@ -16,7 +16,7 @@ export const About = () => {
                 Given that, I have developed several AI/ML models that solves different real-world problems.
             </p>
 
-            <img src={developer} alt="programmer"  className='w-[65%] md:w-[35%]'/>
+            <img src={developer} alt="programmer"  className='w-[65%] md:w-[35%] mt-10 md:mt-0 clip-image'/>
         </div>
 
 
