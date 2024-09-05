@@ -13,10 +13,10 @@ const Skills = () => {
           <div className="h-full w-full flex flex-col md:flex-row items-center md:mt-10 md:items-start justify-between">
             {
               skills.map(skill => (
-                <div key={skill.id} className="bg-[#068FFF] mt-8 md:mt-[-2%] flex flex-col items-center justify-center w-full py-4 px-8 rounded-lg md:h-[95%] md:w-[30%] text-center">
+                <div key={skill.id} className="bg-[#068FFF] mt-8 md:mt-[-2%] flex flex-col items-center justify-center w-full py-8 px-8 rounded-lg md:h-[95%] md:w-[30%] text-center">
                   <div className=" text-[50pt] md:text-[75pt] md:mb-3"> {skill.icon} </div>
                   <h1 className="text-lg md:text-2xl font-bold"> {skill.name} </h1>
-                  <p className="md:mt-1 text-[8pt] md:text-[10pt] text-justify md:w-[90%]"> {skill.description} </p>
+                  <p className="md:mt-1 text-[8pt] md:text-[10pt] text-justify md:w-full"> {skill.description} </p>
                 </div>
               ))
             }

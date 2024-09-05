@@ -8,6 +8,9 @@ export default {
     extend: {
       animation: {
         slowBounce : 'bounce 1s ease-in-out infinite',
+      },
+      fontFamily: {
+        'roboto' : 'sans-serif'
       }
     },
   },

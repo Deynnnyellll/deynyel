@@ -29,7 +29,7 @@ function App() {
 
 
   return (
-    <div className="text-white w-full">
+    <div className="text-white w-full font-roboto">
       <LoadingScreen count={count} isLoading={showLoading}/>
       <div className={showLoading ? "hidden" : "block"}>
         <Navbar />
