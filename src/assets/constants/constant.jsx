@@ -11,21 +11,15 @@ import { BiDesktop } from "react-icons/bi";
 
 // images
 import illuscan from '/src/assets/images/illuscan.png';
-import enrollment from '/src/assets/images/enrollment.png';
-import ecommerce from '/src/assets/images/ecommerce.png';
 import snakelet from '/src/assets/images/snakelet.png';
-import tanglaw from '/src/assets/images/tanglaw.png';
-import financialAdvisor from '/src/assets/images/financial advisor.png';
-import allDay from '/src/assets/images/all day movers.png';
-import dogBreedClassifier from '/src/assets/images/teachme.png';
+import financialAdvisor from '/src/assets/images/financial.png';
+import allDay from '/src/assets/images/allday.png';
+import dogBreedClassifier from '/src/assets/images/dogbreed.png';
 
     // Language Stacks used in Projects
     const illuscanTech = ["Python", "PyQT", "Jupyter"];
     const allDayMoversTech = ["HTML", "TailwindCSS", "Javascript"];
     const financialAdvisorTech = ["Python", "Jupyter", "Tkinter"];
-    const tanglawTech = ["Java", "Java Swing", "MySQL"];
-    const ecommerceTech = ["HTML", "CSS", "Javascript"];
-    const enrollmentTech = ["Python", 'SQLite'];
     const snakeletTech = ["Python"];
     const dogBreedTech = ["Python", "HTML", "CSS", "Javascript", "Flask", "Tensorflow"];
 
@@ -84,7 +78,7 @@ export const projectList = [
         id: 1,
         name: "All Day Movers",
         source: allDay,
-        description: "Static website that showcase the logistic company named All Day Movers Inc.",
+        description: "A static website designed to showcase the services and offerings of All Day Movers Inc., a logistics company. This website provides users with essential information about the company's operations, fleet details, and services such as freight shipping, warehousing, and transportation solutions. Built with a focus on simplicity and clarity, the website is optimized for fast loading times and easy navigation, ensuring a smooth user experience.",
         techStacks: allDayMoversTech
     },
     {
@@ -96,34 +90,13 @@ export const projectList = [
     },
     {
         id: 3,
-        name: "Inventory and Sales Management System for Tanglaw Clothing",
-        source: tanglaw,
-        description: "A desktop application system that is developed for inventory and sales management of Tanglaw Clothing. It has a CRUD function for the purpose of managing and tracking different entities, as well as handling sales of the company.",
-        techStacks: tanglawTech
-    },
-    {
-        id: 4,
-        name: "Sho3we4r1st",
-        source: ecommerce,
-        description: "A simple and static e-commerce website of different sneakers developed through basic HTML, CSS and JavaScript.",
-        techStacks: ecommerceTech
-    },
-    {
-        id: 5,
-        name: "CCIS Simple Enrollment Management System",
-        source: enrollment,
-        description: "A simple enrollment system made to record, update, remove and track the students of CCIS (College of Computer and Information Sciences) department.",
-        techStacks: enrollmentTech
-    },
-    {
-        id: 6,
         name: "Snakelet",
         source: snakelet,
         description: "A python-like programming language developed for novice programmer. Although inspired from python, its syntax is different as the words and rules are inclined to a snake.",
         techStacks: snakeletTech
     },
     {
-        id: 7,
+        id: 4,
         name: "Teach Me 'Bout the Doggie",
         source: dogBreedClassifier,
         description: "A web-based machine learning system that is trained using CNN and transfer learning to classify different dog breeds. This application is implemented through a Flask framework, while the ML model is developed using Jupyter Notebook as a platform and Tensorflow library to build a CNN architecture.",
@@ -146,7 +119,7 @@ export const skills = [
     },
     {
         id: 2,
-        name: "Software Development",
+        name: "Application Development",
         icon: <BiDesktop />,
         description: "Developing software applications using Python"
     }

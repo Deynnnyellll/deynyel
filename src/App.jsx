@@ -16,7 +16,7 @@ function App() {
       const timer = setTimeout(() => 
       {
         setCount(count + 1)
-      }, 30);
+      }, 1);
 
       console.log(count)
 

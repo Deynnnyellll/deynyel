@@ -54,22 +54,22 @@ export const Navbar = () => {
       >
 
           <li className="hover:text-slate-400"> 
-            <Link to="home" duration={300} smooth={true}>
+            <Link to="home" duration={1100} smooth={true}>
               Home
             </Link>
           </li>
           <li className="hover:text-slate-400"> 
-            <Link to="about" duration={300} smooth={true}>
+            <Link to="about" duration={1100} smooth={true}>
               About Me
             </Link>
           </li>
           <li className="hover:text-slate-400"> 
-            <Link to="projects" duration={300} smooth={true}>
+            <Link to="projects" duration={1100} smooth={true}>
               Projects
             </Link>
           </li>
           <li className="hover:text-slate-400"> 
-            <Link to="contact" duration={300} smooth={true}>
+            <Link to="contact" duration={1100} smooth={true}>
               Contact
             </Link>
           </li>
@@ -96,22 +96,22 @@ export const Navbar = () => {
                               : 
                                 "w-full h-[45%] font-semibold text-slate-100 flex justify-between  items-center flex-col text-3xl"}>
               <li className="hover:text-slate-400"> 
-                <Link to="home" duration={300} smooth={true}>
+                <Link to="home" duration={1100} smooth={true}>
                   Home
                 </Link>
               </li>
               <li className="hover:text-slate-400"> 
-                <Link to="about" duration={300} smooth={true}>
+                <Link to="about" duration={1100} smooth={true}>
                   About Me
                 </Link>
               </li>
               <li className="hover:text-slate-400"> 
-                <Link to="projects" duration={300} smooth={true}>
+                <Link to="projects" duration={1100} smooth={true}>
                   Projects
                 </Link>
               </li>
               <li className="hover:text-slate-400"> 
-                <Link to="contact" duration={300} smooth={true}>
+                <Link to="contact" duration={1100} smooth={true}>
                   Contact
                 </Link>
               </li>
