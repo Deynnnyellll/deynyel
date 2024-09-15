@@ -8,7 +8,7 @@ const useIntersectionObserver = () => {
         let refer = null
         const observer = new IntersectionObserver(
             ([entry]) => setIsIntersecting(entry.isIntersecting),
-            {threshold: 0.1}
+            {threshold: 0.05}
         ); //observer
 
         if(ref.current) {
