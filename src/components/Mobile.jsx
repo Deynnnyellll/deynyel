@@ -32,7 +32,7 @@ function Mobile() {
 
         </div>
 
-        <div className='w-[65%] h-[570px] bg-slate-900 mt-20 rounded-2xl z-10 p-3 shadow-slate-700 shadow-inner'>
+        <div className='w-[290px] h-[570px] bg-slate-900 mt-20 rounded-2xl z-10 p-3 shadow-slate-700 shadow-inner'>
             <div className='bg-slate-800 w-full h-full rounded-2xl flex flex-col items-center'>
                 <div className='bg-slate-900 h-[1%] w-[50%] rounded-b-md z-10'></div>
                 <div className='h-full w-full mt-[-2%] z-1 p-4 flex flex-col justify-between'>
