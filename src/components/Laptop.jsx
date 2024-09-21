@@ -13,7 +13,7 @@ function Laptop() {
     const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div ref={ref} className={`relative top-20 ${isVisible ? '' : 'translate-x-[-100%]'} duration-500 ease-in-out`}>
+    <div ref={ref} className={`hidden md:block md:relative top-20 ${isVisible ? '' : 'translate-x-[-100%]'} duration-500 ease-in-out`}>
         <div className={`h-[260px] w-[280px] md:h-[600px] md:w-[900px] flex flex-col items-center animate-rotate3d hover:animate-none`}>
             {/* laptop */}
             <div className="h-[80%] w-full bg-zinc-600 rounded-t-lg p-3 shadow-inner shadow-slate-700">

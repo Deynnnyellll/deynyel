@@ -1,7 +1,7 @@
 import developer from '/src/assets/gif/UI Developer.gif';
 import { techStacks } from '../assets/constants/constant';
-import Skills from './skills';
 import Laptop from './Laptop';
+import Mobile from './Mobile';
 
 export const About = () => {
     const iconHover = "text-[50pt] md:text-[80pt] text-slate-200 p-2 hover:shadow-lg hover:shadow-[#864AF9] hover:scale-110 duration-500";
@@ -34,7 +34,8 @@ export const About = () => {
 
         {/* <Skills />   */}
 
-        <Laptop />     
+        <Laptop />
+        <Mobile />  
     </div>
   )
 }
