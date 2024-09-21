@@ -4,7 +4,7 @@ import Laptop from './Laptop';
 import Mobile from './Mobile';
 
 export const About = () => {
-    const iconHover = "text-[50pt] md:text-[80pt] text-slate-200 p-2 hover:shadow-lg hover:shadow-[#864AF9] hover:scale-110 duration-500";
+    const iconHover = "text-[50pt] md:text-[70pt] text-slate-200 p-2 hover:shadow-lg hover:shadow-[#864AF9] hover:scale-110 duration-500";
 
   return (
     <div id="about" className="h-auto mt-10 px-2 flex flex-col items-center">
@@ -20,7 +20,7 @@ export const About = () => {
 
 
         <div className='flex justify-center items-center flex-col'>
-            <h2 className='mt-10 md:mt-0 text-[20px] md:text-[35px] text-slate-200 font-semibold mb-6 text-center'> Learned Languages and Technology Stacks </h2>
+            <h2 className='mt-10 text-[20px] md:text-[35px] text-slate-200 font-semibold mb-6 text-center'> Learned Languages and Technology Stacks </h2>
             <div className='flex flex-wrap justify-center gap-10 md:gap-20 w-[80%] md:w-[55%]'>
             {
                 techStacks.map(tech => (

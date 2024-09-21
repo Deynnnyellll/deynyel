@@ -1,8 +1,8 @@
 // tech stacks
 import { IoLogoJavascript, IoLogoPython, IoLogoHtml5, IoLogoCss3 } from "react-icons/io5";
-import { SiScikitlearn, SiFlask } from "react-icons/si";
+import { SiScikitlearn, SiFlask, SiMongodb, SiExpress, SiCplusplus, SiJupyter, SiTensorflow, SiPostman } from "react-icons/si";
 import { RiTailwindCssFill, RiReactjsFill } from "react-icons/ri";
-import { SiJupyter, SiTensorflow } from "react-icons/si";
+import { FaGitAlt } from 'react-icons/fa';
 
 // skills
 import { TbWorldWww } from "react-icons/tb";
@@ -64,6 +64,27 @@ export const techStacks = [
         id: 9,
         logo: <SiScikitlearn />
     },
+    {
+        id: 10,
+        logo: <SiMongodb />
+    },
+    {
+        id: 11,
+        logo: <SiExpress />
+    },
+    {
+        id: 12,
+        logo: <SiCplusplus />
+    },
+    {
+        id: 13,
+        logo: <SiPostman />
+    },
+    {
+        id: 14,
+        logo: <FaGitAlt />
+    }
+
 ]
 
 export const projectList = [
@@ -109,7 +130,7 @@ export const skills = [
         id: 0,
         name: "Web Development",
         icon: <TbWorldWww />,
-        description: "Creating a user-friendly, aestethically pleasing, and responsive web application using popular libraries and frameworks including React JS, TailwindCSS, and Flask"
+        description: "Creating user-friendly, and responsive full-stack web applications using React JS, TailwindCSS, Express JS, Flask and MongoDB"
     },
     {
         id: 1,
@@ -121,6 +142,6 @@ export const skills = [
         id: 2,
         name: "Application Development",
         icon: <BiDesktop />,
-        description: "Developing software applications using Python"
+        description: "Developing desktop software applications using Python, C++, and/or Javascript"
     }
 ]
