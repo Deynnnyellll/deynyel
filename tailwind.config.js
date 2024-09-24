@@ -10,7 +10,10 @@ export default {
         'roboto' : 'sans-serif'
       },
       colors: {
-        primaryOne: "#068FFF"
+        darkOne: '#14110f',
+        darkTwo: '#34312d',
+        lightOne: '#3dd6d0',
+        primary: '#864af9'
       },
       keyframes: {
         rotate3d : {

@@ -2,9 +2,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GiSkills } from "react-icons/gi";
 import { skills } from "../assets/constants/constant";
 import { useState } from "react";
+import useIntersectionObserver from "./CustomHook";
 
 function Mobile() {
     const [content, setContent] = useState(null);
+    const [ref, isVisible] = useIntersectionObserver();
 
     function handleContent() {
         if(content === null) {
@@ -27,7 +29,7 @@ function Mobile() {
     }
 
   return (
-    <div className='md:hidden w-full flex justify-center items-center'>
+    <div className={`md:hidden w-full flex justify-center items-center duration-500 ease-in-out ${isVisible ? '' : 'translate-x-[-85%]'}`} ref={ref}>
         <div className='bg-slate-900 w-[4px] h-[120px] rounded-l-lg mt-[-35%] shadow-slate-800 shadow-inner'>
 
         </div>
