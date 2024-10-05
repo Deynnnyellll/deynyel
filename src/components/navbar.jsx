@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <>
-    <div className="hidden md:flex md:items-center top-0 justify-between gap-[20%] px-6 md:h-16 w-full z-10 ease-in-out duration-300">
+    <div className="hidden md:flex md:items-center top-0 justify-between gap-[20%] px-6 md:h-16 w-full absolute z-10 ease-in-out duration-300">
       <img src={logo} alt="logo" className="w-[50px] duration-200" />
       <ul 
         className="flex items-center justify-between text-center text-tight me-10 md:text-md gap-4 text-xl w-[30%] h-full font-semibold ease-in-out cursor-pointer" 
@@ -58,7 +58,7 @@ export const Navbar = () => {
       <div className={`w-full h-[100vh] bg-black opacity-80 fixed ${option ? 'duration-200' : 'duration-500'} z-20 ${option ? 'left-0' : 'left-[-100%]'}`}>
       </div>
       <div className={`md:hidden h-[100vh] w-full fixed bg-[#0F0F0F] ${!option ? 'duration-200' : 'duration-700'} ease-in-out ${option ? 'left-0' : 'left-[-100%]'} flex flex-col justify-center z-30`}>
-            <ul className={!option ? "hidden" : "w-full h-[60%] font-semibold text-slate-100 flex justify-between  items-center flex-col text-3xl"}>
+            <ul className={!option ? "hidden" : "w-full h-[60%] font-semibold text-slate-100 flex justify-center items-center gap-20 flex-col text-3xl"}>
               <li className="hover:text-slate-400"> 
                 <Link to="home" duration={1100} smooth={true} onClick={() => setOption(prevState => !prevState)}>
                   Home
