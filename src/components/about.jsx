@@ -40,7 +40,7 @@ export const About = () => {
         </div>
 
 
-        <div className='flex justify-center items-center flex-col' ref={ref} id="about" variants={variant2} initial="hidden" animate={control} transition={{duration: 0.3, delay: 0.2}}>
+        <div className='flex justify-center items-center flex-col'>
             <h2 className='mt-10 text-[20px] md:text-[35px] text-slate-200 font-semibold mb-6 text-center'> Learned Languages and Technology Stacks </h2>
             <div className='flex flex-wrap justify-center gap-10 md:gap-20 w-[80%] md:w-[55%]'>
             {
