@@ -21,28 +21,23 @@ export const About = () => {
     })
 
     const variant1 = {
-        visible: {y: 0, opacity: 1},
-        hidden: {y: 200, opacity: 0}
+        visible: {opacity: 1},
+        hidden: {opacity: 0}
     }
-
-    const variant2 = {
-        visible: {x: 0, opacity: 1},
-        hidden: {x: -200, opacity: 0}
-      }
 
   return (
     <motion.div ref={ref} id="about" variants={variant1} initial="hidden" animate={control} transition={{duration: 0.3, delay: 0.2}}
         className="h-auto mt-5 md:mt-32 px-2 flex flex-col items-center"
     >
         <h1 className="text-[50px] md:text-[60px] font-semibold text-center mb-5 md:mb-0"> About Me </h1>
-        <motion.div ref={ref} className="flex justify-center flex-col md:flex-row items-center h-[75%] md:gap-14 lg:gap-24">
+        <div className="flex justify-center flex-col md:flex-row items-center h-[75%] md:gap-14 lg:gap-24">
             <p className="w-[85%] md:w-[50%] lg:w-[40%] text-justify text-lg md:text-xl lg:text-2xl"> I recently studied at the <b> Polytechnic University of the Philippines </b> and graduated with a <b> Bachelor of Science in Computer Science</b>.
                 My expertise align with <b>Web Development</b>, <b>Application Development,</b> and <b>Machine Learning</b>. Seeking an <b>entry-level</b> opportunity to apply my 
                 technical skills for software development. 
             </p>
 
             <img loading="lazy" src={developer} alt="programmer"  className='w-[65%] md:w-[35%] mt-10 md:mt-0 mix-blend-screen'/>
-        </motion.div>
+        </div>
 
 
         <div className='flex justify-center items-center flex-col' ref={ref} id="about" variants={variant2} initial="hidden" animate={control} transition={{duration: 0.3, delay: 0.2}}>

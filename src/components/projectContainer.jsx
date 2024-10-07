@@ -54,7 +54,7 @@ const ProjectContainer = ({source, name, description, projects, index}) => {
         </div>
           {/* image container */}
           <div className="md:w-[350px] overflow-hidden object-cover">
-            <img loading="lazy" src={source} alt="" className="h-[235px] md:h-[250px] hover:scale-105 duration-200 ease-in-out object-cover"/>
+            <img src={source} alt="project" className="h-[235px] md:h-[250px] hover:scale-105 duration-200 ease-in-out object-cover"/>
           </div>
           {/* bottom container */}
           <div className="bg-zinc-300 w-[250px] md:w-[350px] flex items-center flex-start gap-1 p-2 rounded-b-md z-10">
