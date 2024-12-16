@@ -60,11 +60,6 @@ export const Navbar = () => {
       <div className={`md:hidden h-[100vh] w-full fixed bg-[#0F0F0F] ${!option ? 'duration-200' : 'duration-700'} ease-in-out ${option ? 'left-0' : 'left-[-100%]'} flex flex-col justify-center z-30`}>
             <ul className={!option ? "hidden" : "w-full h-[60%] font-semibold text-slate-100 flex justify-center items-center gap-20 flex-col text-3xl"}>
               <li className="hover:text-slate-400"> 
-                <Link to="home" duration={1100} smooth={true} onClick={() => setOption(prevState => !prevState)}>
-                  Home
-                </Link>
-              </li>
-              <li className="hover:text-slate-400"> 
                 <Link to="about" duration={1100} smooth={true} onClick={() => setOption(prevState => !prevState)}>
                   About Me
                 </Link>
@@ -79,11 +74,6 @@ export const Navbar = () => {
                   Contact
                 </Link>
               </li>
-
-              <a className="px-4 py-[2px] bg-slate-50 hover:bg-slate-200 rounded-2xl text-slate-800 flex items-center gap-2" href="https://github.com/Deynnnyellll">
-                <SiGithub  className="text-xl"/>
-                <p className="font-semibold text-[16pt]"> GitHub </p>
-              </a>
             </ul>
       </div>
     </>

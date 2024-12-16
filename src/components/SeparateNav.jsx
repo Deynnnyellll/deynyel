@@ -5,20 +5,11 @@ import { Link } from "react-scroll";
 import logo from '/src/assets/images/D.png'
 import { useContext } from "react";
 import { Hero } from "../context/context";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 function SeparateNav() {
     const [show, setShow] = useState(true);
     const [lastScroll, setLastScroll] = useState(0);
     const {isView} = useContext(Hero);
-    const control = useAnimation();
-    const [ref, inView] = useInView();
-
-    const variant = {
-        visible: {opacity: 1},
-        hidden: {opacity: 0}
-    }
 
     const controlNavBar = () => {
         // if scroll down, hide the navbar
@@ -42,17 +33,9 @@ function SeparateNav() {
         }
     });
 
-    useEffect(() => {
-        if(inView) {
-            control.start('visible');
-        }
-    }, [inView, control])
-
   return (
-    <motion.div 
-        className={`hidden md:flex md:items-center justify-between gap-[20%] px-6 md:h-20 w-full bg-opacity-20 backdrop-blur-2xl z-10 ease-in-out duration-500 ${isView === true ? 'fixed top-0 bg-darkOne': 'absolute bg-lightOne shadow-black shadow-sm'}`}
-        ref={ref} variants={variant} initial="hidden" animate={control} transition={{duration: 5, delay: 1}}
-    >
+    <div 
+        className={`hidden md:flex md:items-center justify-between gap-[20%] px-6 md:h-20 w-full bg-opacity-20 backdrop-blur-2xl z-10 ease-in-out duration-500 ${isView === true ? 'fixed top-0 bg-darkOne': 'absolute bg-darkTwo shadow-black'}`}>
         <img src={logo} alt="logo" className={show ? "w-[50px] duration-200" : "hidden"}/>
         <ul className=
         {show ? 
@@ -90,7 +73,7 @@ function SeparateNav() {
                 <p className="font-semibold"> GitHub </p>
             </a>
         }
-    </motion.div>
+    </div>
   )
 }
 

@@ -40,7 +40,7 @@ const ProjectContainer = ({source, name, description, projects, index}) => {
   
   return (
     <motion.div 
-      className="flex flex-col md:flex-row justify-center items-center outline outline-darkTwo shadow-lg shadow-darkTwo rounded-md px-4 py-8 w-[88vw] md:w-[95vw] relative" 
+      className="flex flex-col md:flex-row justify-center items-center outline outline-darkTwo shadow-lg shadow-darkTwo rounded-md px-4 py-8 w-[80vw] md:w-[90vw] relative" 
       variants={variant} initial="hidden" animate={control} ref={ref} transition={{duration: 0.3, delay: 0.2}}
     >
       {/* top container */}
