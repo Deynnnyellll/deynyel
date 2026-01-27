@@ -43,8 +43,8 @@ function App() {
 
   return (
     <Hero.Provider value={{isView, setIsView}}>
-      <div className="text-white w-full font-roboto overflow-x-hidden">
-            <LoadingScreen count={count} isLoading={showLoading}/>
+      <div className="text-white w-full font-roboto flex items-center justify-center overflow-x-hidden">
+            {/* <LoadingScreen count={count} isLoading={showLoading}/>
             <div className={showLoading ? "hidden" : "block"}>
               <Navbar />
               <Landing />
@@ -52,7 +52,9 @@ function App() {
               <About />
               <Projects />
               <Contact />
-            </div>
+            </div> */}
+
+            <h1 className="text-5xl">Hi, I'm sorry for the inconvenience. I am current updating the UI and content of this webpage.</h1>
       </div>
     </Hero.Provider>
   ) 
