@@ -1,43 +1,55 @@
-"use client"
+'use client'
 
-import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme } from "../features/themes/themeSlice";
-import { FaSun, FaMoon } from "react-icons/fa"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Navbar() {
-  const themeValue = useSelector((state) => state.theme.value);
-  const dispatch = useDispatch();
+import Button from "./Button";
 
-  const navigations = ["Home", "About", "Projects", "Contacts"]
+import { Menu } from "lucide-react";
 
-  return (
-    <div className={`w-full py-2 px-6 flex items-center justify-between ${themeValue === false ? "text-black bg-white" : "text-white bg-black"}`}>
-        <h2 className="text-2xl font-bold uppercase">Danniel</h2>
+function Navbar() {
+    const navigation = [
+        { id: 1, name: "Home", link: "#" },
+        { id: 2, name: "About", link: "#" },
+        { id: 3, name: "Projects", link: "#" },
+        { id: 4, name: "Contact", link: "#" }
+    ]
+    const [activeNav, setActiveNav] = useState(1);
+    const [isMobile, setIsMobile] = useState(false);
+    const router = useRouter();
 
-       <ul className="flex items-center justify-center no-underline gap-6 font-medium font-xl">
-            {
-              navigations.map((item, index) => (
-                <li key={index} className="font-medium">{item}</li>
-              ))
-            }
-       </ul>
+    function handleNav(id, name) {
+        setActiveNav(id);
+        router.push(`/${name}`);
+    }
 
-       <button onClick={() => dispatch(toggleTheme())} 
-        className={`border-2 py-2 mb-2 px-6 rounded-full ${themeValue !== false ? "bg-black text-white" : "bg-white text-black"} duration-300`}>
-          <div className={`flex items-center justify-center gap-3 ${themeValue === false ? "flex-row" : "flex-row-reverse"} duration-200 ease-in`}>
-              {
-                themeValue === false ?
-                <>
-                  <FaSun size={25} />
-                  <p>Light</p>
-                </> :
-                <>
-                  <FaMoon size={25} />
-                  <p>Light</p>
-                </>
-              }
+    return (
+        <div className="fixed top-0 w-screen max-w-360 z-20 bg-gray-950/80 border-t border-b border-t-gray-400/50 border-b-gray-400/50 backdrop-blur-3xl flex items-center justify-between px-4 lg:px-20">
+            <h3 className="text-blue-600 mt-3">{"<Deynyel />"}</h3>
+
+            <div className="gap-6 hidden lg:flex items-center justify-center">
+                {
+                    navigation.map(item => (
+                        <a onClick={() => handleNav(item.id, item.name == "Home" ? "/" : item.name)} key={item.id} className={`text-sm font-semibold ${item.id === activeNav ? "text-white" : "text-gray-400"} cursor-pointer hover:text-white/80 duration-200 ease-in-out`}>{item.name}</a>
+                    ))
+                }
             </div>
-       </button>
-    </div>
-  )
+            
+            <div className="block lg:hidden" onClick={() => setIsMobile(prevState => !prevState)}>
+                <Button bgColor={"transparent"} textColor={"white"}>
+                    <Menu size={25} />
+                </Button>
+
+                <div className={`h-screen flex items-center justify-center gap-14 flex-col w-[50%] fixed ${isMobile === true ? "right-0" : "-right-full"} top-0 bg-gray-900 duration-300 ease-in-out`}>
+                    {
+                        navigation.map(item => (
+                            <a onClick={() => handleNav(item.id, item.name)} key={item.id} className={`text-sm font-semibold ${item.id === activeNav ? "text-white" : "text-gray-400"} cursor-pointer hover:text-white/80 duration-200 ease-in-out`}>{item.name}</a>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    )
 }
+
+export default Navbar

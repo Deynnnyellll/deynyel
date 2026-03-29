@@ -1,17 +1,26 @@
-"use client"
+import Hero from "./section/Hero";
+import Services from "./section/Services";
 
-import Hero from "./components/Hero";
-import About from "./components/About";
-import { useSelector } from "react-redux";
-
+// components
+import Banner from "./components/Banner";
+import Button from "./components/Button";
 
 export default function Home() {
-  const themeValue = useSelector((state) => state.theme.value);
-
   return (
-    <div className={`${themeValue === false ? "bg-white text-black" : "bg-black text-white"} p-6`}>
+    <>
       <Hero />
-      <About />
-    </div>
+      <Services />
+      <Banner customStyle={"bg-blue-600 flex items-center justify-center flex-col text-white gap-4"}>
+          <h1>Let's Build Something Amazing Together</h1>
+
+          <p className="text-white! font-medium mb-4">
+            I'm always excited to take on new challenges and collaborate on interesting projects.
+          </p>
+
+          <Button bgColor={"white"}>
+            Start a Conversation
+          </Button>
+      </Banner>
+    </>
   );
 }

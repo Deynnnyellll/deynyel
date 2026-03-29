@@ -20,133 +20,52 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white font-sans max-w-360 mx-auto text-left
 }
+
+
+h1, h2, h3 {
+  @apply font-semibold mb-4
+}
+
 
 h1 {
-  @apply mt-10 mb-8 text-7xl font-semibold
+  @apply text-5xl
 }
 
+
+h2 {
+  @apply text-4xl mb-4
+}
+
+
+h3 {
+  @apply text-2xl mb-4
+}
 
 p {
-  @apply text-lg mb-2
+  @apply text-gray-800 font-medium lg:text-justify
 }
 
-
-.fromleft {
-  animation: fromleft 3s infinite;
-}
-
-.fromright {
-  animation: fromright 3s infinite;
-}
-
-.fromleftdiag {
-  animation: fromleftdiag 3s infinite;
-}
-
-.fromrightdiag {
-  animation: fromrightdiag 3s infinite;
-}
-
-.fromtop {
-  animation: fromtop 3s infinite;
-}
-
-.frombelow {
-  animation: frombelow 3s infinite;
-}
-
-
-@keyframes blur {
-  from {
-    filter: blur(0);
-  }
-  to {
-    filter: blur(1);
-  }
-}
-
-@keyframes fromleft {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes fromright {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes fromleftdiag {
-  0% {
-    left: 0;
-    top: 0;
-  }
-  50% {
-    left: 100%;
-    top: 100%;
-  }
-  100% {
-    left: 0;
-    top: 0;
-  }
-}
-
-@keyframes fromrightdiag {
-  0% {
-    right: 0;
-    top: 0;
-  }
-  50% {
-    right: 100%;
-    top: 100%;
-  }
-  100% {
-    right: 0;
-    top: 0;
-  }
-}
-
-@keyframes fromtop {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 100%;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes frombelow {
-  0% {
-    bottom: 0;
-  }
-  50% {
-    bottom: 100%;
-  }
-  100% {
-    bottom: 0;
-  }
+.two-col {
+  @apply flex items-center justify-center content-center flex-col lg:flex-row gap-14 lg:gap-8 py-8 px-20
 }
 
 .two-col > div {
-  flex-basis: 50%;
+  @apply basis-1 lg:basis-1/2
+}
+
+.dark-bg p {
+  @apply text-gray-400!
+}
+
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3 {
+  @apply text-white!
+}
+
+.hero-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
