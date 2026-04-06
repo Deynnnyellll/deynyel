@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      <Banner customStyle={"bg-blue-600 flex items-center justify-center flex-col text-white gap-4"}>
+      <Banner bannerBgColor={"bg-blue-600"} customStyle={"flex items-center justify-center flex-col text-white gap-4"}>
           <h1>Let's Build Something Amazing Together</h1>
 
           <p className="text-white! font-medium mb-4">

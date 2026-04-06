@@ -1,7 +1,9 @@
-export default function Banner({ customStyle, children }) {
+export default function Banner({ bannerBgColor, customStyle, children }) {
     return (
-        <div className={`mt-8 w-screen max-w-360 px-20 py-16 text-center ${customStyle}`}>
-            {children}
-        </div>
+        <section className={bannerBgColor}>
+            <div className={`mt-8 w-screen px-20 py-16 ${customStyle}`}>
+                {children}
+            </div>
+        </section>
     )
 }

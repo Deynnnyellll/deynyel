@@ -20,7 +20,11 @@
 }
 
 body {
-  @apply bg-white font-sans max-w-360 mx-auto text-left
+  @apply bg-white font-sans mx-auto text-left
+}
+
+section > div {
+  @apply max-w-480 mx-auto px-20
 }
 
 
@@ -48,11 +52,15 @@ p {
 }
 
 .two-col {
-  @apply flex items-center justify-center content-center flex-col lg:flex-row gap-14 lg:gap-8 py-8 px-20
+  @apply flex items-center justify-between flex-col lg:flex-row gap-14 lg:gap-8 py-8
 }
 
 .two-col > div {
   @apply basis-1 lg:basis-1/2
+}
+
+.dark-bg {
+  @apply bg-gray-950
 }
 
 .dark-bg p {
@@ -68,4 +76,14 @@ p {
 .hero-bg {
   background-image: linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
   background-size: 60px 60px;
+}
+
+.career-path::before {
+  content: "";
+  @apply bg-gray-400 h-full w-0.5 absolute top-0 left-[50%] translate-x-[-50%]
+}
+
+.career-path::after {
+  content: "";
+  @apply h-6 w-6 bg-blue-700 rounded-full absolute bottom-0 left-[50%] translate-x-[-50%] border-4 border-blue-300
 }

@@ -15,27 +15,29 @@ export default function Services() {
     ];
 
     return (
-        <div className="text-center px-20 mt-20 mb-20">
-            <h2>What I Do</h2>
+        <section>
+            <div className="text-center px-20 mt-20 mb-20">
+                <h2>What I Do</h2>
 
-            <p className="mb-8 text-center!">
-                Blending technical expertise with creative thinking to build impactful digital experiences
-            </p>
+                <p className="mb-8 text-center!">
+                    Blending technical expertise with creative thinking to build impactful digital experiences
+                </p>
 
-            <div className={`flex justify-center flex-col lg:flex-row gap-4 *:basis-1/${services.length}`}>
-                {
-                    services.map(service => (
-                        <Card 
-                            key={service.id}
-                            cardStyle={"bg-blue-100/75 rounded-lg text-left"}
-                            iconColor={"blue-700"}
-                            icon={service.icon} 
-                            heading={service.heading} 
-                            paragraph={service.paragraph} 
-                        />
-                    ))
-                }
+                <div className={`flex justify-center flex-col lg:flex-row gap-4 *:basis-1/${services.length}`}>
+                    {
+                        services.map(service => (
+                            <Card 
+                                key={service.id}
+                                cardStyle={"bg-blue-100/75 rounded-lg text-left"}
+                                iconColor={"blue-700"}
+                                icon={service.icon} 
+                                heading={service.heading} 
+                                paragraph={service.paragraph} 
+                            />
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
