@@ -87,3 +87,9 @@ p {
   content: "";
   @apply h-6 w-6 bg-blue-700 rounded-full absolute bottom-0 left-[50%] translate-x-[-50%] border-4 border-blue-300
 }
+
+.bg-placeholder {
+  background-image: url(assets/placeholder-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
