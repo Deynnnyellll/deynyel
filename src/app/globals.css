@@ -48,7 +48,7 @@ h3 {
 }
 
 p {
-  @apply text-gray-800 font-medium lg:text-justify
+  @apply text-white font-medium lg:text-justify
 }
 
 .two-col {
