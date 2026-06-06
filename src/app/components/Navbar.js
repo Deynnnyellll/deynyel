@@ -54,7 +54,7 @@ export default function Navbar() {
           transition: "background 0.35s, border-color 0.35s, box-shadow 0.35s",
         }}
       >
-        <div className="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between h-16">
+        <div className="px-5 lg:px-10 flex items-center justify-between h-16">
 
           {/* Logo */}
           <motion.button

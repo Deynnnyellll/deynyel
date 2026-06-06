@@ -1,109 +1,286 @@
-'use client'
+"use client"
 
-import { RiNodejsLine, RiHtml5Line, RiCss3Line, RiNextjsLine, RiReactjsLine, RiTailwindCssLine, RiBootstrapLine, RiGithubLine } from "react-icons/ri";
-import { TbBrandPython, TbBrandAdobeXd,TbBrandFigma, TbSquareLetterM, TbBrandFramerMotion, TbBrandVscode } from "react-icons/tb"; 
-import { SiRedux, SiScikitlearn, SiJupyter, SiCssmodules, SiExpress } from "react-icons/si";
-import { IoColorPaletteOutline, IoLogoSass } from "react-icons/io5";
-import { GiNeedleJaws } from "react-icons/gi";
-import { Code, Box, Palette, Wrench, Cloud, Server, TestTube } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { STACK } from '@/constants/constants.js';
+import { Code } from "lucide-react";
 
-export default function TechnologyStack() {
-    const programmingLanguages = [
-        { id: 1, name: "Javascript", logo: RiNodejsLine },
-        { id: 2, name: "Python", logo: TbBrandPython },
-        { id: 3, name: "HTML", logo: RiHtml5Line },
-        { id: 4, name: "CSS", logo: RiCss3Line }
-    ];
-    
-    const frameworks = [
-        { id: 1, name: "React JS", logo: RiReactjsLine },
-        { id: 2, name: "Next JS", logo: RiNextjsLine },
-        { id: 3, name: "Framer Motion", logo: TbBrandFramerMotion },
-        { id: 4, name: "Redux", logo: SiRedux },
-        { id: 5, name: "Scikit-learn", logo: SiScikitlearn },
-        { id: 6, name: "Jupyter Notebook", logo: SiJupyter }
-    ]
+// ─── Glassmorphism tech chip ───────────────────────────────────────────────────
+function TechChip({ item, groupDot, groupGlow, isSelected, onClick }) {
+  const Icon = item.logo
+  return (
+    <motion.button
+      onClick={onClick}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
+      className="relative flex items-center gap-3 px-4 py-3 rounded-xl text-left w-full"
+      style={{
+        background: isSelected
+          ? `rgba(${groupGlow},0.14)`
+          : "rgba(255,255,255,0.03)",
+        border: isSelected
+          ? `1px solid rgba(${groupGlow},0.4)`
+          : "1px solid rgba(255,255,255,0.07)",
+        backdropFilter: "blur(12px)",
+        transition: "background 0.2s, border-color 0.2s",
+      }}
+    >
+      {/* selected left bar */}
+      {isSelected && (
+        <motion.div
+          layoutId="chip-bar"
+          className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full"
+          style={{ background: groupDot }}
+        />
+      )}
+      <Icon
+        size={22}
+        style={{ color: isSelected ? groupDot : "rgba(255,255,255,0.4)", flexShrink: 0 }}
+      />
+      <span
+        className="text-sm font-medium leading-tight"
+        style={{ color: isSelected ? "#fff" : "rgba(255,255,255,0.55)" }}
+      >
+        {item.name}
+      </span>
+    </motion.button>
+  )
+}
 
-    const styling = [
-        { id: 1, name: "Tailwind CSS", logo: RiTailwindCssLine },
-        { id: 2, name: "Bootstrap", logo: RiBootstrapLine },
-        { id: 3, name: "SASS", logo: IoLogoSass },
-        { id: 4, name: "CSS Modules", logo: SiCssmodules },
-        { id: 5, name: "Material UI", logo: TbSquareLetterM }
-    ]
+// ─── Group card ────────────────────────────────────────────────────────────────
+function GroupCard({ group, selectedId, onSelect, index }) {
+  const GroupIcon = group.logo
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ type: "spring", stiffness: 260, damping: 26, delay: index * 0.07 }}
+      className="rounded-2xl p-5 border border-white/[0.08] relative overflow-hidden"
+      style={{ background: "rgba(8,9,20,0.65)", backdropFilter: "blur(24px)" }}
+    >
+      {/* Top accent strip matching detail panel */}
+      <div
+        className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${group.accent} opacity-40`}
+      />
+      {/* Group header */}
+      <div className="flex items-center gap-3 mb-4">
+        <div
+          className="w-8 h-8 rounded-lg flex items-center justify-center"
+          style={{ background: `rgba(${group.glow},0.15)`, border: `1px solid rgba(${group.glow},0.25)` }}
+        >
+          <GroupIcon size={15} style={{ color: group.dot }} />
+        </div>
+        <span className="text-sm font-bold text-white/80 tracking-wide">{group.tech}</span>
+      </div>
 
-    const platform = [
-        { id: 1, name: "GitHub", logo: RiGithubLine },
-        { id: 2, name: "VsCode", logo: TbBrandVscode },
-        { id: 3, name: "Figma", logo: TbBrandFigma },
-        { id: 4, name: "Adobe XD", logo: TbBrandAdobeXd }
-    ]
+      {/* Tech chips grid */}
+      <div className="grid grid-cols-2 gap-2">
+        {group.items.map((item) => (
+          <TechChip
+            key={item.id}
+            item={item}
+            groupDot={group.dot}
+            groupGlow={group.glow}
+            isSelected={selectedId === item.id}
+            onClick={() => onSelect(item, group)}
+          />
+        ))}
+      </div>
+    </motion.div>
+  )
+}
 
-    const backend = [
-        { id: 1, name: "Node JS", logo: RiNodejsLine },
-        { id: 2, name: "Express JS", logo: SiExpress },
-        { id: 3, name: "REST API", logo: Cloud }
-    ]
-
-    const testing = [
-        { id: 1, name: "WCAG Contrast", logo: IoColorPaletteOutline },
-        { id: 2, name: "JAWS", logo: GiNeedleJaws }
-    ]
-
-    const technologyStack = [
-        { tech: "Programming Languages", desc: "Core", logo: Code, stack: programmingLanguages, color: "bg-blue-900/50" },
-        { tech: "Frameworks & Libraries", desc: "Core", logo: Box, stack:  frameworks, color: "bg-blue-900/50" },
-        { tech: "Styling & Design", logo: Palette, stack: styling, color: "bg-pink-800/50" },
-        { tech: "Platforms & Tools", logo: Wrench, stack: platform, color: "bg-indigo-900/50" },
-        { tech: "Backend and APIs", logo: Server, stack: backend, color: "bg-yellow-700/50" },
-        { tech: "Testing", logo: TestTube, stack: testing, color: "bg-amber-700/50" }
-    ];
-    
+// ─── Detail panel (25%) ────────────────────────────────────────────────────────
+function DetailPanel({ selected, group }) {
+  if (!selected) {
     return (
-        <section className="dark-bg py-8">
-            <div className="*:text-center! mb-8">
-                <p className="text-blue-600! text-xs! font-bold mb-1">EXPERTISE</p>
-
-                <h1>Technology Stack</h1>
-
-                <p>My expertise across various front-end and web technologies</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-center justify-center gap-4 mb-4 *:border *:border-gray-400/15 *:min-h-75 *:rounded-2xl">
-                {
-                    technologyStack.map((item, index) => {
-                        const IconComponent = item.logo
-
-                        return (
-                            <div key={index} className="px-8 py-4 bg-gray-900/25 backdrop-blur-3xl">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="flex items-center gap-3">
-                                        <p className={`${item.color} rounded-xl p-2 text-white!`}><IconComponent size={20} /></p>
-                                        <p className="font-bold! text-white!">{item.tech}</p>
-                                    </div>
-
-                                    {item.desc && <p className="bg-blue-90 px-4 py-1 rounded-full text-xs!">{item.desc}</p> }
-                                </div>
-
-                                <div className="col-span-1 content-start gap-4 grid grid-cols-1 lg:grid-cols-2">
-                                    {
-                                        item.stack.map(item => {
-                                            const IconComponent = item.logo;
-
-                                            return (
-                                                <div key={item.id} className="px-6 py-6 flex items-center justify-start gap-4 col-span-1 border border-gray-300/15 rounded-xl text-white! h-10">
-                                                    <IconComponent size={30} className="border border-gray-300/15 bg-gray-800/50 p-0.5 rounded-lg" />
-                                                    <p className="text-white!">{item.name}</p>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </section>
+      <div className="h-full flex flex-col items-center justify-center gap-4 text-center px-6">
+        <div className="w-16 h-16 rounded-2xl border border-white/[0.06] flex items-center justify-center"
+          style={{ background: "rgba(255,255,255,0.02)" }}>
+          <Code size={24} className="text-white/15" />
+        </div>
+        <p className="text-white/20 text-sm">Select a technology<br />to see details</p>
+      </div>
     )
+  }
+
+  const Icon = selected.logo
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={selected.id}
+        initial={{ opacity: 0, x: 24, filter: "blur(8px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        exit={{ opacity: 0, x: -16, filter: "blur(6px)" }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="relative h-full flex flex-col overflow-hidden rounded-2xl"
+        style={{
+          background: "rgba(8,9,20,0.7)",
+          border: `1px solid rgba(${group.glow},0.2)`,
+          backdropFilter: "blur(28px)",
+        }}
+      >
+        {/* Subtle logo watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <Icon
+            style={{
+              fontSize: 220,
+              width: 220,
+              height: 220,
+              color: `rgba(${group.glow},0.06)`,
+            }}
+          />
+        </div>
+
+        {/* Top gradient strip */}
+        <div
+          className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${group.accent} rounded-t-2xl`}
+        />
+
+        {/* Glow orb */}
+        <div
+          className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none"
+          style={{
+            background: `radial-gradient(circle, rgba(${group.glow},0.18) 0%, transparent 70%)`,
+            filter: "blur(32px)",
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col h-full p-7">
+          {/* Icon */}
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.1, type: "spring", stiffness: 320, damping: 22 }}
+            className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${group.accent} p-0.5 mb-6 self-start`}
+          >
+            <div className="w-full h-full rounded-2xl bg-gray-950/80 flex items-center justify-center">
+              <Icon size={28} className="text-white" />
+            </div>
+          </motion.div>
+
+          {/* Name */}
+          <motion.h3
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="text-white font-black text-2xl tracking-tight mb-1"
+          >
+            {selected.name}
+          </motion.h3>
+
+          {/* Category pill */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.18 }}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full self-start mb-5"
+            style={{ background: `rgba(${group.glow},0.12)`, border: `1px solid rgba(${group.glow},0.25)` }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: group.dot }} />
+            <span className="text-xs font-medium" style={{ color: group.dot }}>{group.tech}</span>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-white/50 text-sm leading-relaxed flex-1"
+          >
+            {selected.desc}
+          </motion.p>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
+// ─── Main section ──────────────────────────────────────────────────────────────
+export default function TechnologyStack() {
+  const [selected, setSelected] = useState(null)
+  const [selectedGroup, setSelectedGroup] = useState(null)
+
+  const handleSelect = (item, group) => {
+    if (selected?.id === item.id) {
+      setSelected(null)
+      setSelectedGroup(null)
+    } else {
+      setSelected(item)
+      setSelectedGroup(group)
+    }
+  }
+
+  return (
+    <section className="relative overflow-hidden bg-gray-950 py-24 px-6 lg:px-20">
+
+      {/* Ambient orbs */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[-8%] top-[10%] w-[440px] h-[440px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(99,102,241,0.09) 0%, transparent 70%)", filter: "blur(60px)" }} />
+        <div className="absolute right-[-4%] bottom-[8%] w-[380px] h-[380px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 70%)", filter: "blur(60px)" }} />
+      </div>
+
+      {/* Dot grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-14"
+        >
+          <p className="font-mono text-xs tracking-[0.25em] text-indigo-400/60 uppercase mb-3">Expertise</p>
+          <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            Technology{" "}
+            <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
+              Stack
+            </span>
+          </h2>
+          <p className="text-white/40 text-base max-w-md mx-auto">
+            My expertise across front-end, back-end, and design technologies.
+          </p>
+        </motion.div>
+
+        {/* 75 / 25 layout */}
+        <div className="flex flex-col lg:flex-row gap-5">
+
+          {/* ── 75% — tech groups ── */}
+          <div className="flex-3 grid grid-cols-1 md:grid-cols-2 gap-4 content-start">
+            {STACK.map((group, i) => (
+              <GroupCard
+                key={group.tech}
+                group={group}
+                index={i}
+                selectedId={selected?.id}
+                onSelect={handleSelect}
+              />
+            ))}
+          </div>
+
+          {/* ── 25% — detail panel ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex-1 lg:min-w-[260px] lg:max-w-[300px] sticky self-center"
+            style={{ minHeight: 480 }}
+          >
+            <div className="h-full rounded-2xl overflow-hidden" style={{ minHeight: 480 }}>
+              <DetailPanel selected={selected} group={selectedGroup} />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -2,7 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "./components/Navbar";
-import Footer from "./section/Footer";
+import BlobCursor from "./components/BlobCursor";
 
 const roboto = Roboto({
   weight: '400',
@@ -20,10 +20,10 @@ export default function RootLayout({ children }) {
       className={`${roboto.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <BlobCursor />
         <Navbar />
         {children}
-        <Footer />
-        </body>
+      </body>
     </html>
   );
 }
